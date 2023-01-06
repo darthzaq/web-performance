@@ -8909,6 +8909,13 @@ section.unpad > article .imagebg + div {
 .project-thumb > a {
   display: block;
 }
+
+.project-thumb img {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: attr(width) / attr(height);
+}
+
 .project-thumb:not(.hover-element) > a {
   transition: 0.3s ease;
   -webkit-transition: 0.3s ease;
