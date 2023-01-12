@@ -1,7 +1,20 @@
 import { hide, show } from "./utils";
+import { getCLS, getFID, getLCP } from "web-vitals";
+
+function sendToGoogleAnalytics({ name, delta, id }) {
+  window.gtag("event", name, {
+    event_category: "Web Vitals",
+    event_label: id,
+    non_interaction: true,
+    value: Math.round(name === "CLS" ? delta * 1000 : delta),
+  });
+}
 
 export function initForm() {
   loadSelectData();
+  getCLS(sendToGoogleAnalytics);
+  getFID(sendToGoogleAnalytics);
+  getLCP(sendToGoogleAnalytics);
 
   document
     .getElementById("user_form")
