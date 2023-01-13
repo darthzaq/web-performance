@@ -26,7 +26,7 @@ npm install
 npm run dev
 
 # generate production build
-npm run build
+npm run build - Analyze bundle thanks to "webpack-bundle-analyzer" (before_remove_moment.png + after_remove_moment.png)
 
 # run generated content in dist folder on port 8080
 npm run start
