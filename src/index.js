@@ -9,6 +9,10 @@ import "./assets/css/custom.css";
 import { initForm } from "./form";
 import { initSlider } from "./slider";
 import { hide, setTime, show } from "./utils";
+import { initAnalytics, initWebVitals } from './analytics';
+
+initAnalytics();
+initWebVitals();
 
 document.onload = init();
 
