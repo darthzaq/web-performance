@@ -10,6 +10,7 @@ import { initForm } from "./form";
 import { initSlider } from "./slider";
 import { hide, setTime, show } from "./utils";
 import { initAnalytics, initWebVitals } from './analytics';
+import { setUpVideoModal } from "./player";
 
 initAnalytics();
 initWebVitals();
@@ -21,6 +22,7 @@ function init() {
   initModals();
   initSlider();
   initForm();
+  setUpVideoModal();
 }
 
 function initModals() {
