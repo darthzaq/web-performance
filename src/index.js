@@ -21,8 +21,16 @@ function init() {
   setTime();
   initModals();
   initSlider();
-  initForm();
+  // initForm();
   setUpVideoModal();
+
+  // Dynamic import
+  document.getElementById("subscribe").addEventListener("click", () => {
+    import("./form").then(({ initForm }) => {
+      initForm();
+    });
+  });
+
 }
 
 function initModals() {

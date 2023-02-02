@@ -613,10 +613,15 @@
               <div>
                 <div class="video-cover border--round box-shadow-wide">
                   <img
+                    srcset="
+                      src/assets/images/bg/que-es-codelytv_small.png 486w,
+                      src/assets/images/bg/que-es-codelytv.png 787w
+                    "
+                    sizes="(max-width: 1024px) 486px, 787px"
                     alt="Vídeo ¿Qué es CodelyTV"
                     src="src/assets/images/bg/que-es-codelytv.png"
                   />
-                  <div class="video-play-icon" data-modal="videoModal"></div>
+                  <div id="videoPlay" class="video-play-icon" data-modal="videoModal"></div>
                 </div>
               </div>
             </div>

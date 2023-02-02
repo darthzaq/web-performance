@@ -1,13 +1,19 @@
 const path = require("path");
+const { merge } = require("webpack-merge");
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: { main: './src/index.js' },
   output: {
-    filename: "main.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all"
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
