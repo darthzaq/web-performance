@@ -1,7 +1,7 @@
-const path = require("path");
-const { merge } = require("webpack-merge");
 const CopyPlugin = require("copy-webpack-plugin");
+const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 module.exports = {
   entry: { main: './src/index.js' },
@@ -16,6 +16,27 @@ module.exports = {
     },
   },
   plugins: [
+    new HtmlCriticalWebpackPlugin({
+      base: path.resolve(__dirname, "dist"),
+      src: "index.html",
+      dest: "index.html",
+      inline: true,
+      minify: true,
+      extract: true,
+      dimensions: [
+        {
+          width: 375,
+          height: 565,
+        },
+        {
+          width: 1100,
+          height: 700,
+        },
+      ],
+      penthouse: {
+        blockJSRequests: false,
+      },
+    }),
     new HtmlWebpackPlugin({
       template: "index.html",
     }),
