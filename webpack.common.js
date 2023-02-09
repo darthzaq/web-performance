@@ -1,6 +1,7 @@
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const PurgecssPlugin = require("purgecss-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -16,6 +17,9 @@ module.exports = {
     },
   },
   plugins: [
+    new PurgecssPlugin({
+      paths: ["index.html"],
+    }),
     new HtmlCriticalWebpackPlugin({
       base: path.resolve(__dirname, "dist"),
       src: "index.html",
